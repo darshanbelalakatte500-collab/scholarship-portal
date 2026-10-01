@@ -99,3 +99,51 @@ if (loginForm) {
         }
     });
 }
+// SCHOLARSHIP APPLICATION
+
+const applicationForm =
+    document.getElementById("applicationForm");
+
+if (applicationForm) {
+
+    applicationForm.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const applicationId =
+            "VC" + Date.now().toString().slice(-8);
+
+        const studentName =
+            document.getElementById("appName").value;
+
+        localStorage.setItem(
+            "applicationId",
+            applicationId
+        );
+
+        localStorage.setItem(
+            "applicationStudent",
+            studentName
+        );
+
+        localStorage.setItem(
+            "applicationStatus",
+            "Submitted"
+        );
+
+        document.getElementById(
+            "applicationMessage"
+        ).innerHTML =
+            "✅ Application submitted successfully! " +
+            "Your Application ID is: " +
+            "<strong>" + applicationId + "</strong>";
+
+        document.getElementById(
+            "applicationMessage"
+        ).style.color = "green";
+
+        applicationForm.reset();
+
+    });
+
+}
