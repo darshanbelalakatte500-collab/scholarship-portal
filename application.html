@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Scholarship Application - Vidya Chetana</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Vidya Chetana</h1>
+    <p>Scholarship Application Form</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="scholarship.html">Scholarship</a>
+    <a href="eligibility.html">Eligibility</a>
+    <a href="register.html">Register</a>
+    <a href="login.html">Login</a>
+</nav>
+
+<section class="form-section">
+
+    <h2>Scholarship Application</h2>
+
+    <form id="applicationForm">
+
+        <h3>Personal Details</h3>
+
+        <label>Full Name</label>
+        <input type="text" id="appName" required>
+
+        <label>Date of Birth</label>
+        <input type="date" id="appDob" required>
+
+        <label>Mobile Number</label>
+        <input type="tel"
+               id="appMobile"
+               maxlength="10"
+               pattern="[0-9]{10}"
+               required>
+
+        <label>Email</label>
+        <input type="email" id="appEmail" required>
+
+        <label>Category</label>
+        <select id="appCategory" required>
+            <option value="">Select Category</option>
+            <option>General</option>
+            <option>OBC</option>
+            <option>SC</option>
+            <option>ST</option>
+            <option>Other</option>
+        </select>
+
+
+        <h3 style="margin-top:30px;">
+            Educational Details
+        </h3>
+
+        <label>10th Percentage</label>
+        <input type="number"
+               id="appTenth"
+               min="0"
+               max="100"
+               step="0.01"
+               required>
+
+        <label>12th / Diploma Percentage</label>
+        <input type="number"
+               id="appTwelfth"
+               min="0"
+               max="100"
+               step="0.01"
+               required>
+
+        <label>College Name</label>
+        <input type="text" id="appCollege" required>
+
+        <label>Course</label>
+        <input type="text"
+               id="appCourse"
+               placeholder="Example: B.E Computer Science"
+               required>
+
+        <label>Current Semester</label>
+        <select id="appSemester" required>
+            <option value="">Select Semester</option>
+            <option>1st Semester</option>
+            <option>2nd Semester</option>
+            <option>3rd Semester</option>
+            <option>4th Semester</option>
+            <option>5th Semester</option>
+            <option>6th Semester</option>
+            <option>7th Semester</option>
+            <option>8th Semester</option>
+        </select>
+
+
+        <h3 style="margin-top:30px;">
+            Family Details
+        </h3>
+
+        <label>Annual Family Income</label>
+        <input type="number"
+               id="appIncome"
+               required>
+
+        <label>Parent / Guardian Name</label>
+        <input type="text"
+               id="parentName"
+               required>
+
+
+        <h3 style="margin-top:30px;">
+            Bank Details
+        </h3>
+
+        <label>Bank Name</label>
+        <input type="text" id="bankName" required>
+
+        <label>Account Holder Name</label>
+        <input type="text"
+               id="accountHolder"
+               required>
+
+        <label>Account Number</label>
+        <input type="text"
+               id="accountNumber"
+               required>
+
+        <label>IFSC Code</label>
+        <input type="text"
+               id="ifsc"
+               required>
+
+
+        <h3 style="margin-top:30px;">
+            Documents
+        </h3>
+
+        <label>10th Marks Card</label>
+        <input type="file"
+               id="tenthDocument"
+               accept=".pdf,.jpg,.jpeg,.png"
+               required>
+
+        <label>12th / Diploma Marks Card</label>
+        <input type="file"
+               id="twelfthDocument"
+               accept=".pdf,.jpg,.jpeg,.png"
+               required>
+
+        <label>Income Certificate</label>
+        <input type="file"
+               id="incomeDocument"
+               accept=".pdf,.jpg,.jpeg,.png">
+
+        <label>College Certificate</label>
+        <input type="file"
+               id="collegeDocument"
+               accept=".pdf,.jpg,.jpeg,.png">
+
+
+        <button type="submit"
+                class="button">
+            Submit Application
+        </button>
+
+    </form>
+
+    <p id="applicationMessage"></p>
+
+</section>
+
+<footer>
+    <p>© 2026 Vidya Chetana Scholarship Portal</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
