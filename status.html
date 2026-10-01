@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Application Status - Vidya Chetana</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Vidya Chetana</h1>
+    <p>Application Status</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="scholarship.html">Scholarship</a>
+    <a href="eligibility.html">Eligibility</a>
+    <a href="application.html">Apply</a>
+    <a href="status.html">Status</a>
+</nav>
+
+<section class="form-section">
+
+    <h2>Check Application Status</h2>
+
+    <form id="statusForm">
+
+        <label>Application ID</label>
+
+        <input
+            type="text"
+            id="searchApplicationId"
+            placeholder="Example: VC12345678"
+            required
+        >
+
+        <button type="submit" class="button">
+            Check Status
+        </button>
+
+    </form>
+
+    <div id="statusResult"></div>
+
+</section>
+
+<footer>
+    <p>© 2026 Vidya Chetana Scholarship Portal</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
