@@ -212,3 +212,115 @@ if (statusForm) {
     });
 
 }
+// ADMIN DASHBOARD
+
+const adminApplication =
+    document.getElementById("adminApplication");
+
+if (adminApplication) {
+
+    const applicationId =
+        localStorage.getItem("applicationId");
+
+    const studentName =
+        localStorage.getItem("applicationStudent");
+
+    const status =
+        localStorage.getItem("applicationStatus");
+
+    if (applicationId) {
+
+        adminApplication.innerHTML = `
+
+            <div class="card"
+                 style="width:100%;">
+
+                <h3>Student Application</h3>
+
+                <p>
+                    <strong>Application ID:</strong>
+                    ${applicationId}
+                </p>
+
+                <p>
+                    <strong>Student Name:</strong>
+                    ${studentName}
+                </p>
+
+                <p>
+                    <strong>Current Status:</strong>
+                    ${status}
+                </p>
+
+                <label>
+                    Change Application Status
+                </label>
+
+                <select id="adminStatus">
+
+                    <option value="Submitted">
+                        Submitted
+                    </option>
+
+                    <option value="Under Verification">
+                        Under Verification
+                    </option>
+
+                    <option value="Approved">
+                        Approved
+                    </option>
+
+                    <option value="Rejected">
+                        Rejected
+                    </option>
+
+                </select>
+
+                <br>
+
+                <button
+                    class="button"
+                    onclick="updateApplicationStatus()">
+                    Update Status
+                </button>
+
+                <p id="adminMessage"></p>
+
+            </div>
+        `;
+
+    } else {
+
+        adminApplication.innerHTML = `
+            <p>
+                No application has been submitted yet.
+            </p>
+        `;
+    }
+}
+
+
+// UPDATE APPLICATION STATUS
+
+function updateApplicationStatus() {
+
+    const newStatus =
+        document.getElementById(
+            "adminStatus"
+        ).value;
+
+    localStorage.setItem(
+        "applicationStatus",
+        newStatus
+    );
+
+    document.getElementById(
+        "adminMessage"
+    ).innerHTML =
+        "✅ Application status updated to: " +
+        "<strong>" + newStatus + "</strong>";
+
+    document.getElementById(
+        "adminMessage"
+    ).style.color = "green";
+}
