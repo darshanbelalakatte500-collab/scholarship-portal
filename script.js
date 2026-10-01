@@ -147,3 +147,68 @@ if (applicationForm) {
     });
 
 }
+// APPLICATION STATUS
+
+const statusForm =
+    document.getElementById("statusForm");
+
+if (statusForm) {
+
+    statusForm.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const enteredId =
+            document.getElementById(
+                "searchApplicationId"
+            ).value.trim();
+
+        const savedId =
+            localStorage.getItem("applicationId");
+
+        const studentName =
+            localStorage.getItem("applicationStudent");
+
+        const applicationStatus =
+            localStorage.getItem("applicationStatus");
+
+        const result =
+            document.getElementById("statusResult");
+
+        if (enteredId === savedId && savedId) {
+
+            result.innerHTML = `
+                <div class="card" style="width:100%; margin-top:25px;">
+
+                    <h3>Application Found</h3>
+
+                    <p>
+                        <strong>Application ID:</strong>
+                        ${savedId}
+                    </p>
+
+                    <p>
+                        <strong>Student Name:</strong>
+                        ${studentName}
+                    </p>
+
+                    <p>
+                        <strong>Status:</strong>
+                        ${applicationStatus}
+                    </p>
+
+                </div>
+            `;
+
+        } else {
+
+            result.innerHTML = `
+                <p style="color:red; margin-top:20px;">
+                    ❌ Application ID not found.
+                </p>
+            `;
+        }
+
+    });
+
+}
